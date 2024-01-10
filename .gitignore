@@ -1,0 +1,96 @@
+# Dependencias
+/node_modules
+/frontend/node_modules
+/backend/node_modules
+
+# Archivos .env para el backend y el frontend
+/backend/.env
+/backend/.env.*
+/frontend/.env
+/frontend/.env.*
+
+# Archivos de bloqueo de paquetes
+/package-lock.json
+/yarn.lock
+/frontend/package-lock.json
+/frontend/yarn.lock
+/backend/package-lock.json
+/backend/yarn.lock
+
+# Directorios de distribución/build
+/dist
+/build
+/frontend/dist
+/frontend/build
+/backend/dist
+/backend/build
+
+# Archivos de registro
+/npm-debug.log
+/yarn-error.log
+/frontend/npm-debug.log
+/frontend/yarn-error.log
+/backend/npm-debug.log
+/backend/yarn-error.log
+
+# Sistema de archivos
+.DS_Store
+Thumbs.db
+
+# Archivos y carpetas específicos del editor
+/.idea
+/.vscode
+/*.sublime-project
+/*.sublime-workspace
+/frontend/.idea
+/frontend/.vscode
+/frontend/*.sublime-project
+/frontend/*.sublime-workspace
+/backend/.idea
+/backend/.vscode
+/backend/*.sublime-project
+/backend/*.sublime-workspace
+
+# Otros archivos y directorios que podrías querer ignorar
+/coverage
+/.nuxt
+/public/hot
+/public/storage
+/storage/*.key
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+.env.backup
+.env.testing
+/vendor
+/.phpunit.result.cache
+/frontend/coverage
+/frontend/.nuxt
+/frontend/public/hot
+/frontend/public/storage
+/frontend/storage/*.key
+/frontend/.vagrant
+/frontend/Homestead.json
+/frontend/Homestead.yaml
+/frontend/npm-debug.log
+/frontend/yarn-error.log
+/frontend/.env.backup
+/frontend/.env.testing
+/frontend/vendor
+/frontend/.phpunit.result.cache
+/backend/coverage
+/backend/.nuxt
+/backend/public/hot
+/backend/public/storage
+/backend/storage/*.key
+/backend/.vagrant
+/backend/Homestead.json
+/backend/Homestead.yaml
+/backend/npm-debug.log
+/backend/yarn-error.log
+/backend/.env.backup
+/backend/.env.testing
+/backend/vendor
+/backend/.phpunit.result.cache
