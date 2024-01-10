@@ -1,6 +1,6 @@
 import User from "../models/User.js";
 import bcrypt from "bcrypt";
-import { ErrorHandler } from "../utils/ErrorHandler.js";
+import { ErrorHandler } from "../utils/ResponseHandler.js";
 
 const createUser = async (username, password, role) => {
   try {

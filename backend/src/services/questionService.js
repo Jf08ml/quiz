@@ -1,5 +1,5 @@
 import Question from "../models/Question.js";
-import { ErrorHandler } from "../utils/ErrorHandler.js";
+import { ErrorHandler } from "../utils/ResponseHandler.js";
 
 const addQuestion = async (questionData) => {
   try {

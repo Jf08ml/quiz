@@ -1,8 +1,11 @@
 import * as userService from "../services/userService.js";
-import { ErrorHandler, handleError } from "../utils/ErrorHandler.js";
+import {
+  ErrorHandler,
+  handleError,
+  SuccessHandler,
+} from "../utils/ResponseHandler.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
-
 import { loginSchema } from "../validations/userValidation.js";
 
 const registerUser = async (req, res) => {
@@ -14,11 +17,12 @@ const registerUser = async (req, res) => {
       const token = jwt.sign(
         { id: savedUser._id, role: role },
         process.env.JWT_SECRET,
-        {
-          expiresIn: "24h",
-        }
+        { expiresIn: "24h" }
       );
-      res.status(201).send({ id: savedUser._id, token });
+      const data = { id: savedUser._id, token };
+      SuccessHandler.sendSuccess(res, data);
+    } else {
+      throw new ErrorHandler(500, "User could not be created");
     }
   } catch (error) {
     handleError(error, res);
@@ -34,19 +38,18 @@ const loginUser = async (req, res) => {
 
     const { username, password } = req.body;
     const user = await userService.findUserByUsername(username);
+
     if (!user || !(await bcrypt.compare(password, user.password))) {
-      return res.status(401).send("Username or password incorrect");
+      throw new ErrorHandler(401, "Username or password incorrect");
     }
 
     const token = jwt.sign(
       { id: user._id, role: user.role },
       process.env.JWT_SECRET,
-      {
-        expiresIn: "24h",
-      }
+      { expiresIn: "24h" }
     );
-
-    res.send({ message: "Successful authentication", token });
+    const data = { token };
+    SuccessHandler.sendSuccess(res, data);
   } catch (error) {
     handleError(error, res);
   }

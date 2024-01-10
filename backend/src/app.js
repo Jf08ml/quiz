@@ -17,7 +17,7 @@ const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
   message:
-    "Demasiadas solicitudes desde esta IP, por favor intenta de nuevo después de 15 minutos",
+    "Too many requests from this IP, please try again after 15 minutes",
 });
 
 app.use(cors({ origin: "*" }));

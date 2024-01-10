@@ -1,10 +1,10 @@
 import * as questionService from "../services/questionService.js";
-import { handleError } from "../utils/ErrorHandler.js";
+import { handleError, SuccessHandler } from "../utils/ResponseHandler.js";
 
 const createQuestion = async (req, res) => {
   try {
     const question = await questionService.addQuestion(req.body);
-    res.status(201).json(question);
+    SuccessHandler.sendSuccess(res, question);
   } catch (error) {
     handleError(error, res);
   }
@@ -13,7 +13,7 @@ const createQuestion = async (req, res) => {
 const getAllQuestions = async (req, res) => {
   try {
     const questions = await questionService.getAllQuestions();
-    res.json(questions);
+    SuccessHandler.sendSuccess(res, questions);
   } catch (error) {
     handleError(error, res);
   }
@@ -22,7 +22,7 @@ const getAllQuestions = async (req, res) => {
 const getQuestionById = async (req, res) => {
   try {
     const question = await questionService.getQuestionById(req.params.id);
-    res.json(question);
+    SuccessHandler.sendSuccess(res, question);
   } catch (error) {
     handleError(error, res);
   }
@@ -34,7 +34,7 @@ const updateQuestion = async (req, res) => {
       req.params.id,
       req.body
     );
-    res.json(updatedQuestion);
+    SuccessHandler.sendSuccess(res, updatedQuestion);
   } catch (error) {
     handleError(error, res);
   }
@@ -43,7 +43,7 @@ const updateQuestion = async (req, res) => {
 const deleteQuestion = async (req, res) => {
   try {
     await questionService.deleteQuestionById(req.params.id);
-    res.status(204).send();
+    SuccessHandler.sendSuccess(res);
   } catch (error) {
     handleError(error, res);
   }
@@ -56,7 +56,7 @@ const generateQuiz = async (req, res) => {
       numberOfQuestions
     );
 
-    res.json(questions);
+    SuccessHandler.sendSuccess(res, questions);
   } catch (error) {
     handleError(error, res);
   }

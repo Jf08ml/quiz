@@ -1,5 +1,5 @@
 import Quiz from "../models/Quiz.js";
-import { ErrorHandler } from "../utils/ErrorHandler.js";
+import { ErrorHandler } from "../utils/ResponseHandler.js";
 
 const createQuiz = async (quizData) => {
   try {
