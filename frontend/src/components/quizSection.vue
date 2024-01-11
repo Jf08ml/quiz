@@ -81,7 +81,7 @@ async function submitForm() {
   };
   const response = await createQuiz(quizResults.value);
 
-  if (response.result === "success") {
+  if (response.status === "success") {
     router.push("/");
   }
 }
