@@ -10,11 +10,10 @@ export async function loginUser(credentials) {
     const response = await apiAuth.post(`/login`, { username, password });
 
     localStorage.setItem("accessToken", response.data.token);
-    localStorage.setItem("refreshToken", response.data.refreshToken);
 
     useAuth.setCredentials(
-      response.data.token,
-      response.data.role
+      response.data.data.token,
+      response.data.data.role
     );
 
     return response.data;
