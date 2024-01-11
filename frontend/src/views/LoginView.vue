@@ -20,7 +20,7 @@
           required
         />
       </div>
-      <button type="submit">Iniciar Sesión</button>
+      <button type="submit">Log in</button>
     </form>
   </div>
 </template>

@@ -2,12 +2,12 @@
   <div class="question-container">
     <form @submit.prevent="handleSubmit">
       <div class="form-group">
-        <label for="text">Pregunta:</label>
+        <label for="text">Ask:</label>
         <input type="text" id="text" v-model="question.text" required />
       </div>
 
       <div class="form-group">
-        <label for="correctAnswer">Respuesta Verdadera:</label>
+        <label for="correctAnswer">True Answer:</label>
         <input
           type="checkbox"
           id="correctAnswer"
@@ -16,7 +16,7 @@
       </div>
 
       <div class="form-group">
-        <label for="observation">Observación:</label>
+        <label for="observation">Observation:</label>
         <textarea
           id="observation"
           v-model="question.observation"

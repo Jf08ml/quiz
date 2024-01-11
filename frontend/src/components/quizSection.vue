@@ -7,17 +7,17 @@
     <button @click="submitAnswer(false)">False</button>
 
     <p v-if="showAnswer">
-      La respuesta correcta es:
+      The correct answer is:
       {{ currentQuestion.observation }}
     </p>
   </div>
 
   <div v-else>
-    <h2>Fin del cuestionario</h2>
+    <h2>End of the quiz</h2>
     <p>Results: {{ correctAnswers }} / {{ questions.length }}</p>
     <form @submit.prevent="submitForm">
       <input type="email" v-model="email" placeholder="Email" required />
-      <button type="submit">Guardar Resultados</button>
+      <button type="submit">Save Results</button>
     </form>
   </div>
 </template>
@@ -81,7 +81,7 @@ async function submitForm() {
   };
   const response = await createQuiz(quizResults.value);
 
-  if (response.result === "success") {
+  if (response.status === "success") {
     router.push("/");
   }
 }
