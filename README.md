@@ -1,5 +1,5 @@
 # Back Code Challenge
-# Description
+## Description
 
 This project is an interactive quiz system designed to test knowledge through true or false questions. During the quiz, users answer a series of questions. If the answer is correct, they advance; otherwise, they are shown the correct answer with its justification. At the end of the quiz, users can view their score and save their answers.
 
