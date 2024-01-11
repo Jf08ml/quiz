@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h2>Lista de Preguntas</h2>
+    <h2>List of questions</h2>
     <table>
       <thead>
         <tr>
-          <th>Pregunta</th>
-          <th>Respuesta Correcta</th>
-          <th>Observación</th>
-          <th>Acciones</th>
+          <th>Ask</th>
+          <th>Correct answer</th>
+          <th>Observation</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -17,10 +17,10 @@
           <td>{{ question.observation }}</td>
           <td>
             <button class="btn-option" @click="emitEdit(question._id)">
-              Editar
+              Edit
             </button>
             <button class="btn-option" @click="emitDelete(question._id)">
-              Eliminar
+              Delete
             </button>
           </td>
         </tr>
