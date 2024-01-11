@@ -20,7 +20,7 @@ const limiter = rateLimit({
     "Too many requests from this IP, please try again after 15 minutes",
 });
 
-app.use(cors({ origin: "*" }));
+app.use(cors());
 
 app.use(limiter);
 

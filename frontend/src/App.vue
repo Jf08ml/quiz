@@ -4,7 +4,8 @@
     <router-link v-if="!authStore.isAuthenticated" to="/login"
       >Log in</router-link
     >
-    <router-link v-if="authStore.isAuthenticated" to="/dashboard">Dashboard quiz</router-link> |
+    <router-link v-else to="/dashboard">Dashboard quiz</router-link>
+    |
     <button
       class="btn-logout"
       v-if="authStore.isAuthenticated"
@@ -18,18 +19,32 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, watch } from "vue";
 import Loading from "./components/LoadingSpinner.vue";
 import EventBus from "./utils/eventBus";
 import { useAuthStore } from "./stores/auth.js";
 
 const authStore = useAuthStore();
 
+if (localStorage.getItem("accessToken")) {
+  authStore.setCredentials(
+    localStorage.getItem("accessToken"),
+    localStorage.getItem("userRole")
+  );
+}
+
 onMounted(() => {
   EventBus.on("logout", () => {
     authStore.logout();
   });
 });
+
+watch(
+  () => authStore.isAuthenticated,
+  (newVal) => {
+    console.log("Estado de autenticación cambiado:", newVal);
+  }
+);
 </script>
 
 <style>
