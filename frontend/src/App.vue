@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import { onMounted, watch } from "vue";
+import { onMounted } from "vue";
 import Loading from "./components/LoadingSpinner.vue";
 import EventBus from "./utils/eventBus";
 import { useAuthStore } from "./stores/auth.js";
@@ -38,13 +38,6 @@ onMounted(() => {
     authStore.logout();
   });
 });
-
-watch(
-  () => authStore.isAuthenticated,
-  (newVal) => {
-    console.log("Estado de autenticación cambiado:", newVal);
-  }
-);
 </script>
 
 <style>
