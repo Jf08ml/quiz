@@ -13,7 +13,7 @@
       <tbody>
         <tr v-for="question in questions" :key="question._id">
           <td>{{ question.text }}</td>
-          <td>{{ question.correctAnswer ? "Sí" : "No" }}</td>
+          <td>{{ question.correctAnswer ? "Yes" : "No" }}</td>
           <td>{{ question.observation }}</td>
           <td>
             <button class="btn-option" @click="emitEdit(question._id)">
