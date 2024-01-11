@@ -51,7 +51,7 @@ Thumbs.db
 /backend/*.sublime-project
 /backend/*.sublime-workspace
 
-# Otros archivos y directorios que podrías querer ignorar
+# Otros archivos y directorios
 /coverage
 /.nuxt
 /public/hot

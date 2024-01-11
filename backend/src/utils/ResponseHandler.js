@@ -18,4 +18,14 @@ const handleError = (err, res) => {
   });
 };
 
-export { ErrorHandler, handleError };
+class SuccessHandler {
+  static sendSuccess(res, data, statusCode = 200) {
+      res.status(statusCode).json({
+          status: 'success',
+          statusCode,
+          data,
+      });
+  }
+}
+
+export { ErrorHandler, handleError, SuccessHandler };

@@ -1,10 +1,10 @@
 import * as quizService from "../services/quizService.js";
-import { handleError } from "../utils/ErrorHandler.js";
+import { handleError, SuccessHandler } from "../utils/ResponseHandler.js";
 
 const createQuiz = async (req, res) => {
   try {
     const quiz = await quizService.createQuiz(req.body.quizData);
-    res.status(201).json({ result: "success", quiz });
+    SuccessHandler(res, quiz);
   } catch (error) {
     handleError(error, res);
   }

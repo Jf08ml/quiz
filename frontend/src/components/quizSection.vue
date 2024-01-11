@@ -42,7 +42,8 @@ const incorrectAnswers = ref(0);
 const email = ref("");
 
 onMounted(async () => {
-  questions.value = await generateQuiz();
+  const response = await generateQuiz();
+  questions.value = response.data;
 });
 
 const currentQuestionIndex = ref(0);

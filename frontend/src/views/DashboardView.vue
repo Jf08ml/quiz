@@ -28,7 +28,8 @@ onMounted(async () => {
 });
 
 const loadQuestions = async () => {
-  questions.value = await getAllQuestions();
+  const response = await getAllQuestions();
+  questions.value = response.data;
 };
 
 const newQuestion = async (question) => {
