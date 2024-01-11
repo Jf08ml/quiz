@@ -25,25 +25,8 @@ const createAxiosInstance = (endpoint) => {
   return api;
 };
 
-// const apiAuth = createAxiosInstance("https://api.zybizobazar.com/api/auth");
-// const apiProduct = createAxiosInstance(
-//   "https://api.zybizobazar.com/api/product"
-// );
-// const apiProductSale = createAxiosInstance(
-//   "https://api.zybizobazar.com/api/productSale"
-// );
-// const apiExpense = createAxiosInstance(
-//   "https://api.zybizobazar.com/api/expense"
-// );
-
-// const apiRewards = createAxiosInstance(
-//   "https://api.zybizobazar.com/api/rewards"
-// );
-
 const apiAuth = createAxiosInstance("/user");
 const apiQuestion = createAxiosInstance("/question");
 const apiQuiz = createAxiosInstance("/quiz");
-// const apiExpense = createAxiosInstance("http://localhost:5000/api/expense");
-// const apiRewards = createAxiosInstance("http://localhost:5000/api/rewards");
 
 export { apiAuth, apiQuestion, apiQuiz };
