@@ -21,7 +21,7 @@ $ npm install
 ## Installation frontend
 $ npm install
 
-#Running the app
+# Running the app
 
 ### Backend
 $ npm run dev
