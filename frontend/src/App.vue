@@ -9,7 +9,7 @@
     <button
       class="btn-logout"
       v-if="authStore.isAuthenticated"
-      @click="authStore.logout"
+      @click="logOut"
     >
       Log Out
     </button>
@@ -23,6 +23,9 @@ import { onMounted } from "vue";
 import Loading from "./components/LoadingSpinner.vue";
 import EventBus from "./utils/eventBus";
 import { useAuthStore } from "./stores/auth.js";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const authStore = useAuthStore();
 
@@ -32,6 +35,11 @@ if (localStorage.getItem("accessToken")) {
     localStorage.getItem("userRole")
   );
 }
+
+const logOut = () => {
+  authStore.logout();
+  router.push({name: "home"});
+};
 
 onMounted(() => {
   EventBus.on("logout", () => {
