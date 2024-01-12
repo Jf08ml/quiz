@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>services/questionService.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="ErrorHandler.html">ErrorHandler</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="SuccessHandler.html">SuccessHandler</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="SuccessHandler.html#.sendSuccess">sendSuccess</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#QuestionSchema">QuestionSchema</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#QuizResultSchema">QuizResultSchema</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#UserSchema">UserSchema</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#addQuestion">addQuestion</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#createQuestion">createQuestion</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#createQuiz">createQuiz</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#createUser">createUser</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#deleteQuestion">deleteQuestion</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#deleteQuestionById">deleteQuestionById</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#findUserByUsername">findUserByUsername</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#generateQuiz">generateQuiz</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getAllQuestions">getAllQuestions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getQuestionById">getQuestionById</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#getRandomQuestions">getRandomQuestions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#handleError">handleError</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#limiter">limiter</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#loginUser">loginUser</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#questionSchema">questionSchema</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#quizResultSchema">quizResultSchema</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="global.html#registerSchema">registerSchema</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#registerUser">registerUser</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#roleValidation">roleValidation</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#searchAvaiblePort">searchAvaiblePort</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#updateQuestion">updateQuestion</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#updateQuestionById">updateQuestionById</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#validate">validate</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">services/questionService.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import Question from "../models/Question.js";
+import { ErrorHandler } from "../utils/ResponseHandler.js";
+
+/**
+ * Add a new question to the database.
+ * @param {Object} questionData - Data for the new question.
+ * @returns {Promise&lt;Object>} The saved question.
+ * @throws {ErrorHandler} Error saving question to database.
+ */
+const addQuestion = async (questionData) => {
+  try {
+    const question = new Question(questionData);
+    return await question.save();
+  } catch (error) {
+    throw new ErrorHandler(500, "Error saving question to database");
+  }
+};
+
+/**
+ * Gets all questions from the database.
+ * @returns {Promise&lt;Array>} List of questions.
+ * @throws {ErrorHandler} Failed to get questions.
+ */
+const getAllQuestions = async () => {
+  try {
+    return await Question.find();
+  } catch (error) {
+    throw new ErrorHandler(500, "Error getting questions");
+  }
+};
+
+/**
+ * You get a question for your ID.
+ * @param {string} id - The ID of the question.
+ * @returns {Promise&lt;Object>} The question found.
+ * @throws {ErrorHandler} Error getting question or not found.
+ */
+const getQuestionById = async (id) => {
+  try {
+    const question = await Question.findById(id);
+    if (!question) {
+      throw new ErrorHandler(404, "Question not found");
+    }
+    return question;
+  } catch (error) {
+    throw new ErrorHandler(500, "Error getting question");
+  }
+};
+
+/**
+ * Update a question by its ID.
+ * @param {string} id - The ID of the question to update.
+ * @param {Object} questionData - Updated question data.
+ * @returns {Promise&lt;Object>} The updated question.
+ * @throws {ErrorHandler} Error updating question or missing question.
+ */
+const updateQuestionById = async (id, questionData) => {
+  try {
+    const updatedQuestion = await Question.findByIdAndUpdate(id, questionData, {
+      new: true,
+    });
+    if (!updatedQuestion) {
+      throw new ErrorHandler(404, "Question not found");
+    }
+    return updatedQuestion;
+  } catch (error) {
+    throw new ErrorHandler(500, "Error updating question");
+  }
+};
+
+/**
+ * Delete a question by its ID.
+ * @param {string} id - The ID of the question to delete.
+ * @returns {Promise&lt;Object>} The question removed.
+ * @throws {ErrorHandler} Error deleting question or missing question.
+ */
+const deleteQuestionById = async (id) => {
+  try {
+    const deletedQuestion = await Question.findByIdAndDelete(id);
+    if (!deletedQuestion) {
+      throw new ErrorHandler(404, "Question not found");
+    }
+    return deletedQuestion;
+  } catch (error) {
+    throw new ErrorHandler(500, "Error deleting question");
+  }
+};
+
+/**
+ * Gets a random number of questions from the database.
+ * @param {number} count - Number of questions to obtain.
+ * @returns {Promise&lt;Array>} List of random questions.
+ * @throws {ErrorHandler} Error getting random questions.
+ */
+const getRandomQuestions = async (count) => {
+  try {
+    return await Question.aggregate([{ $sample: { size: count } }]);
+  } catch (error) {
+    throw new ErrorHandler(500, "Error getting random questions");
+  }
+};
+export {
+  addQuestion,
+  getAllQuestions,
+  getQuestionById,
+  updateQuestionById,
+  deleteQuestionById,
+  getRandomQuestions,
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a> on Fri Jan 12 2024 09:55:44 GMT-0500 (hora estándar de Colombia) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

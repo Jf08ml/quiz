@@ -8,6 +8,13 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import { loginSchema } from "../validations/userValidation.js";
 
+/**
+ * Driver to register a new user.
+ *
+ * @param {Object} req - HTTP request object with user data in 'req.body'.
+ * @param {Object} res - HTTP response object.
+ * @returns {Promise<void>} Registered user data and token in a JSON response.
+ */
 const registerUser = async (req, res) => {
   try {
     const { username, password, role } = req.body;
@@ -29,6 +36,13 @@ const registerUser = async (req, res) => {
   }
 };
 
+/**
+ * Handler to authenticate a user and generate an access token.
+ *
+ * @param {Object} req - HTTP request object with the login data in 'req.body'.
+ * @param {Object} res - HTTP response object.
+ * @returns {Promise<void>} Access token in a JSON response.
+ */
 const loginUser = async (req, res) => {
   try {
     const { error } = loginSchema.validate(req.body);
