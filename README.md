@@ -13,3 +13,18 @@ The system also includes a complete CRUD to manage the questions, allowing to ad
 - CRUD for question management.
 - Login system for administrator users.
 - Role validation for specific operations.
+
+# Installation
+## Installation backend
+$ npm install
+##Instalation frontend
+$ npm install
+
+#Running the app
+
+### Backend
+$ npm run dev
+
+### Frontend
+
+$ npm run serve
