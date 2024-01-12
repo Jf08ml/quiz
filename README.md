@@ -29,3 +29,7 @@ $ npm run dev
 ### Frontend
 
 $ npm run serve
+
+Login Credentials: 
+- username: admin
+- password: admin
