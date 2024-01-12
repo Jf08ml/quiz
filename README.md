@@ -18,7 +18,7 @@ The system also includes a complete CRUD to manage the questions, allowing to ad
 ## Installation backend
 $ npm install
 
-##Instalation frontend
+## Installation frontend
 $ npm install
 
 #Running the app
