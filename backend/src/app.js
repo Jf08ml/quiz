@@ -13,11 +13,13 @@ import quizRouter from "./routes/quizRoutes.js";
 
 const app = express();
 
+/**
+ * Rate limit to avoid too many requests from the same IP.
+ */
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
-  message:
-    "Too many requests from this IP, please try again after 15 minutes",
+  message: "Too many requests from this IP, please try again after 15 minutes",
 });
 
 app.use(cors());
@@ -29,6 +31,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(helmet());
 
+/**
+ * API routes.
+ */
 app.use("/api/user", userRouter);
 app.use("/api/question", questionRouter);
 app.use("/api/quiz", quizRouter);
@@ -37,6 +42,9 @@ app.get("/", (req, res) => {
   res.send("API Quiz");
 });
 
+/**
+ * Global error handler.
+ */
 app.use((err, req, res, next) => {
   console.error(err.stack || err);
 
@@ -52,6 +60,9 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT;
 
+/**
+ * Search for an available port and start the server.
+ */
 searchAvaiblePort(PORT, (freePort, err) => {
   if (err) {
     console.error("Error finding a free port:", err);

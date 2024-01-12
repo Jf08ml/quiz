@@ -1,5 +1,9 @@
 const net = require("net");
 
+/**
+ * Search for an available port for development environment.
+ */
+
 export function searchAvaiblePort(port, callback) {
   const server = net.createServer();
 

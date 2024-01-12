@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon start.js"
+    "dev": "nodemon start.js",
+    "generate-docs": "jsdoc -c jsdoc.conf.json"
   },
   "author": "",
   "license": "ISC",
@@ -28,6 +29,9 @@
     "@babel/cli": "^7.23.4",
     "@babel/core": "^7.23.7",
     "@babel/node": "^7.22.19",
-    "@babel/preset-env": "^7.23.8"
+    "@babel/preset-env": "^7.23.8",
+    "jsdoc": "^4.0.2",
+    "minami": "^1.2.3",
+    "taffydb": "^2.7.3"
   }
 }
